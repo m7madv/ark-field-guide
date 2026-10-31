@@ -55,6 +55,7 @@ jobs:
           build/verify-models
       - name: Build unsigned device application
         run: |
+          mkdir -p build
           set -o pipefail
           xcodebuild build -project ARKFieldGuide.xcodeproj -scheme ARKFieldGuide -configuration Release -destination 'generic/platform=iOS' -derivedDataPath build/Device CURRENT_PROJECT_VERSION="$ARK_BUILD_NUMBER" CODE_SIGNING_ALLOWED=NO | tee build/device.log
           ditto -c -k --keepParent build/Device/Build/Products/Release-iphoneos/ARKFieldGuide.app build/ARKFieldGuide-unsigned-app.zip

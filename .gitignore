@@ -4,6 +4,8 @@ DerivedData/
 *.xcarchive/
 *.ipa
 *.p12
+*.p8
+*.cer
 *.mobileprovision
 *.xcuserstate
 .DS_Store
