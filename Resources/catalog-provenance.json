@@ -1,0 +1,9 @@
+{
+  "package": "com.studiowildcard.arkuse",
+  "version": "1.10467",
+  "build": 46,
+  "platform": "Android ARM64",
+  "assetSplit": "split_obbassets.apk",
+  "catalogEntries": 40,
+  "verification": "Unencrypted PAK directory filenames, SHA1 verified. Species mapping and Arabic names editorial. Does not establish spawn presence or live position."
+}

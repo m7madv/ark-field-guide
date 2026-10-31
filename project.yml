@@ -1,0 +1,47 @@
+name: ARKFieldGuide
+options:
+  bundleIdPrefix: local.ark
+  deploymentTarget:
+    iOS: '16.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1,2'
+    MARKETING_VERSION: '0.2.0'
+    CURRENT_PROJECT_VERSION: '1'
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_CFBundleDisplayName: 'دليل أرك'
+    INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+    INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+targets:
+  ARKFieldGuide:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Resources
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.ark.fieldguide
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.reference
+  ARKFieldGuideTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    dependencies:
+      - target: ARKFieldGuide
+    settings:
+      base:
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/ARKFieldGuide.app/ARKFieldGuide
+        BUNDLE_LOADER: $(TEST_HOST)
+schemes:
+  ARKFieldGuide:
+    build:
+      targets:
+        ARKFieldGuide: all
+        ARKFieldGuideTests: [test]
+    test:
+      targets: [ARKFieldGuideTests]

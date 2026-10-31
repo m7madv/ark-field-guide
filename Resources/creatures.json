@@ -1,0 +1,378 @@
+[
+  {
+    "id": "rex",
+    "arabic": "ريكس",
+    "english": "Rex",
+    "aliases": [
+      "تيرانوصور",
+      "تي ريكس"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Rex/Rex_Character_BP.uasset"
+  },
+  {
+    "id": "raptor",
+    "arabic": "رابتور",
+    "english": "Raptor",
+    "aliases": [
+      "رابتر"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Raptor/Raptor_Character_BP.uasset"
+  },
+  {
+    "id": "argentavis",
+    "arabic": "أرجنتافيس",
+    "english": "Argentavis",
+    "aliases": [
+      "أرجي",
+      "ارجنتافيس"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Argentavis/Argent_Character_BP.uasset"
+  },
+  {
+    "id": "pteranodon",
+    "arabic": "بتيرانودون",
+    "english": "Pteranodon",
+    "aliases": [
+      "بترا",
+      "تيرانودون"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Ptero/Ptero_Character_BP.uasset"
+  },
+  {
+    "id": "castoroides",
+    "arabic": "قندس عملاق",
+    "english": "Castoroides",
+    "aliases": [
+      "قندس",
+      "بيفر"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Beaver/Beaver_Character_BP.uasset"
+  },
+  {
+    "id": "doedicurus",
+    "arabic": "دوديكوروس",
+    "english": "Doedicurus",
+    "aliases": [
+      "دوديك",
+      "دوديكورس"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Doedicurus/Doed_Character_BP.uasset"
+  },
+  {
+    "id": "ankylosaurus",
+    "arabic": "أنكيلوصور",
+    "english": "Ankylosaurus",
+    "aliases": [
+      "أنكيلو",
+      "انكيلو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Ankylo/Ankylo_Character_BP.uasset"
+  },
+  {
+    "id": "therizinosaur",
+    "arabic": "ثيريزينوصور",
+    "english": "Therizinosaur",
+    "aliases": [
+      "ثيري",
+      "تيريزينو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Therizinosaurus/Therizino_Character_BP.uasset"
+  },
+  {
+    "id": "spino",
+    "arabic": "سبينوصور",
+    "english": "Spino",
+    "aliases": [
+      "سبينو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Spino/Spino_Character_BP.uasset"
+  },
+  {
+    "id": "giganotosaurus",
+    "arabic": "جيجانوتوصور",
+    "english": "Giganotosaurus",
+    "aliases": [
+      "جيجا",
+      "غيغا"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Giganotosaurus/Gigant_Character_BP.uasset"
+  },
+  {
+    "id": "triceratops",
+    "arabic": "تريسيراتوبس",
+    "english": "Triceratops",
+    "aliases": [
+      "ترايك",
+      "ترايسيراتوبس"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Trike/Trike_Character_BP.uasset"
+  },
+  {
+    "id": "stegosaurus",
+    "arabic": "ستيغوصور",
+    "english": "Stegosaurus",
+    "aliases": [
+      "ستيجو",
+      "ستيغو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Stego/Stego_Character_BP.uasset"
+  },
+  {
+    "id": "brontosaurus",
+    "arabic": "برونتوصور",
+    "english": "Brontosaurus",
+    "aliases": [
+      "برونتو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Sauropod/Sauropod_Character_BP.uasset"
+  },
+  {
+    "id": "parasaur",
+    "arabic": "باراصور",
+    "english": "Parasaur",
+    "aliases": [
+      "باراسور",
+      "بارا"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Para/Para_Character_BP.uasset"
+  },
+  {
+    "id": "dodo",
+    "arabic": "دودو",
+    "english": "Dodo",
+    "aliases": [],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Dodo/Dodo_Character_BP.uasset"
+  },
+  {
+    "id": "dilophosaur",
+    "arabic": "ديلوفوصور",
+    "english": "Dilophosaur",
+    "aliases": [
+      "ديلو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Dilo/Dilo_Character_BP.uasset"
+  },
+  {
+    "id": "direwolf",
+    "arabic": "ذئب رهيب",
+    "english": "Direwolf",
+    "aliases": [
+      "ذئب",
+      "داير وولف"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Direwolf/Direwolf_Character_BP.uasset"
+  },
+  {
+    "id": "sabertooth",
+    "arabic": "نمر سيفي الأنياب",
+    "english": "Sabertooth",
+    "aliases": [
+      "سايبر",
+      "سايبرتوث"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Saber/Saber_Character_BP.uasset"
+  },
+  {
+    "id": "mammoth",
+    "arabic": "ماموث",
+    "english": "Mammoth",
+    "aliases": [],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Mammoth/Mammoth_Character_BP.uasset"
+  },
+  {
+    "id": "woollyrhino",
+    "arabic": "وحيد قرن صوفي",
+    "english": "Woolly Rhino",
+    "aliases": [
+      "وحيد قرن",
+      "راينو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/WoollyRhino/Rhino_Character_BP.uasset"
+  },
+  {
+    "id": "megalodon",
+    "arabic": "ميغالودون",
+    "english": "Megalodon",
+    "aliases": [
+      "قرش",
+      "ميجالودون"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Megalodon/Megalodon_Character_BP.uasset"
+  },
+  {
+    "id": "mosasaurus",
+    "arabic": "موساصور",
+    "english": "Mosasaurus",
+    "aliases": [
+      "موسا"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Mosasaurus/Mosa_Character_BP.uasset"
+  },
+  {
+    "id": "plesiosaur",
+    "arabic": "بليزيوصور",
+    "english": "Plesiosaur",
+    "aliases": [
+      "بليزيو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Plesiosaur/Plesiosaur_Character_BP.uasset"
+  },
+  {
+    "id": "dunkleosteus",
+    "arabic": "دانكليوستيوس",
+    "english": "Dunkleosteus",
+    "aliases": [
+      "دانكليو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Dunkleosteus/Dunkle_Character_BP.uasset"
+  },
+  {
+    "id": "basilosaurus",
+    "arabic": "باسيلوصور",
+    "english": "Basilosaurus",
+    "aliases": [
+      "باسيلو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Basilosaurus/Basilosaurus_Character_BP.uasset"
+  },
+  {
+    "id": "ichthyosaurus",
+    "arabic": "إكثيوصور",
+    "english": "Ichthyosaurus",
+    "aliases": [
+      "دولفين",
+      "اكثيوصور"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Dolphin/Dolphin_Character_BP.uasset"
+  },
+  {
+    "id": "baryonyx",
+    "arabic": "باريونيكس",
+    "english": "Baryonyx",
+    "aliases": [
+      "باري"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Baryonyx/Baryonyx_Character_BP.uasset"
+  },
+  {
+    "id": "sarco",
+    "arabic": "ساركوسوكس",
+    "english": "Sarco",
+    "aliases": [
+      "تمساح",
+      "ساركو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Sarco/Sarco_Character_BP.uasset"
+  },
+  {
+    "id": "kaprosuchus",
+    "arabic": "كابروسوكس",
+    "english": "Kaprosuchus",
+    "aliases": [
+      "كابرو"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Kaprosuchus/Kaprosuchus_Character_BP.uasset"
+  },
+  {
+    "id": "carbonemys",
+    "arabic": "كاربونيميس",
+    "english": "Carbonemys",
+    "aliases": [
+      "سلحفاة"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Turtle/Turtle_Character_BP.uasset"
+  },
+  {
+    "id": "iguanodon",
+    "arabic": "إغوانودون",
+    "english": "Iguanodon",
+    "aliases": [
+      "اغوانودون"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Iguanodon/Iguanodon_Character_BP.uasset"
+  },
+  {
+    "id": "megaloceros",
+    "arabic": "ميغالوسيروس",
+    "english": "Megaloceros",
+    "aliases": [
+      "غزال"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Stag/Stag_Character_BP.uasset"
+  },
+  {
+    "id": "procoptodon",
+    "arabic": "بروكوبتودون",
+    "english": "Procoptodon",
+    "aliases": [
+      "كنغر"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Procoptodon/Procoptodon_Character_BP.uasset"
+  },
+  {
+    "id": "megatherium",
+    "arabic": "ميغاثيريوم",
+    "english": "Megatherium",
+    "aliases": [
+      "ميجاثيريوم"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Megatherium/Megatherium_Character_BP.uasset"
+  },
+  {
+    "id": "quetzal",
+    "arabic": "كويتزال",
+    "english": "Quetzal",
+    "aliases": [
+      "كتزال",
+      "كيتزال"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Quetzalcoatlus/Quetz_Character_BP.uasset"
+  },
+  {
+    "id": "tapejara",
+    "arabic": "تابيجارا",
+    "english": "Tapejara",
+    "aliases": [
+      "تابي"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Tapejara/Tapejara_Character_BP.uasset"
+  },
+  {
+    "id": "pelagornis",
+    "arabic": "بيلاجورنيس",
+    "english": "Pelagornis",
+    "aliases": [
+      "بيلا"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Pelagornis/Pela_Character_BP.uasset"
+  },
+  {
+    "id": "otter",
+    "arabic": "قضاعة",
+    "english": "Otter",
+    "aliases": [
+      "ثعلب الماء",
+      "اوتر"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Otter/Otter_Character_BP.uasset"
+  },
+  {
+    "id": "kairuku",
+    "arabic": "كايروكو",
+    "english": "Kairuku",
+    "aliases": [
+      "بطريق"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Kairuku/Kairuku_Character_BP.uasset"
+  },
+  {
+    "id": "achatina",
+    "arabic": "أكاتينا",
+    "english": "Achatina",
+    "aliases": [
+      "حلزون",
+      "اكاتينا"
+    ],
+    "assetPath": "../../../ShooterGame/Content/PrimalEarth/Dinos/Achatina/Achatina_Character_BP.uasset"
+  }
+]
