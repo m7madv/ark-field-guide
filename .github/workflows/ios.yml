@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -45,6 +45,7 @@ jobs:
       - name: Generate Xcode project
         run: |
           xcodebuild -version
+          python3 -c 'import re,subprocess; v=subprocess.check_output(["xcodebuild","-version"],text=True); assert int(re.search(r"Xcode (\d+)",v).group(1)) >= 26, "TestFlight upload requires Xcode 26 or later"'
           brew install xcodegen
           xcodegen generate
           echo "ARK_BUILD_NUMBER=$((GITHUB_RUN_NUMBER * 100 + GITHUB_RUN_ATTEMPT))" >> "$GITHUB_ENV"
