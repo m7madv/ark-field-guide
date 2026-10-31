@@ -48,13 +48,20 @@ jobs:
           brew install xcodegen
           xcodegen generate
           echo "ARK_BUILD_NUMBER=$((GITHUB_RUN_NUMBER * 100 + GITHUB_RUN_ATTEMPT))" >> "$GITHUB_ENV"
+      - name: Build unsigned device application
+        run: |
+          set -o pipefail
+          xcodebuild build -project ARKFieldGuide.xcodeproj -scheme ARKFieldGuide -configuration Release -destination 'generic/platform=iOS' -derivedDataPath build/Device CURRENT_PROJECT_VERSION="$ARK_BUILD_NUMBER" CODE_SIGNING_ALLOWED=NO | tee build/device.log
+          ditto -c -k --keepParent build/Device/Build/Products/Release-iphoneos/ARKFieldGuide.app build/ARKFieldGuide-unsigned-app.zip
       - name: Select iPhone simulator
+        timeout-minutes: 5
         run: |
           DEVICE_ID=$(xcrun simctl list devices available --json | python3 -c 'import sys,json; d=json.load(sys.stdin)["devices"]; print(next(v["udid"] for k,vs in d.items() if "iOS" in k for v in vs if v["name"].startswith("iPhone")))')
           echo "DEVICE_ID=$DEVICE_ID" >> "$GITHUB_ENV"
           xcrun simctl boot "$DEVICE_ID"
           xcrun simctl bootstatus "$DEVICE_ID" -b
       - name: Test on simulator
+        timeout-minutes: 10
         run: |
           mkdir -p build
           set -o pipefail
@@ -65,11 +72,6 @@ jobs:
           xcrun simctl launch "$DEVICE_ID" local.ark.fieldguide
           sleep 3
           xcrun simctl io "$DEVICE_ID" screenshot build/iphone.png
-      - name: Build unsigned device application
-        run: |
-          set -o pipefail
-          xcodebuild build -project ARKFieldGuide.xcodeproj -scheme ARKFieldGuide -configuration Release -destination 'generic/platform=iOS' -derivedDataPath build/Device CURRENT_PROJECT_VERSION="$ARK_BUILD_NUMBER" CODE_SIGNING_ALLOWED=NO | tee build/device.log
-          ditto -c -k --keepParent build/Device/Build/Products/Release-iphoneos/ARKFieldGuide.app build/ARKFieldGuide-unsigned-app.zip
       - name: Export signed IPA
         if: github.event_name == 'workflow_dispatch' && inputs.signed
         env:
@@ -104,7 +106,7 @@ jobs:
         if: always()
         with:
           name: ARKFieldGuide-build
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 7
           path: |
             build/*.log
