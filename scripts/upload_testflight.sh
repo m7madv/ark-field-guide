@@ -20,5 +20,5 @@ shopt -s nullglob
 IPAS=(build/Export/*.ipa)
 test "${#IPAS[@]}" -eq 1 || { echo 'Expected exactly one exported IPA'; exit 1; }
 xcrun altool --upload-app --type ios --file "${IPAS[0]}" \
-  -apiKey "$APP_STORE_CONNECT_API_KEY_ID" -apiIssuer "$APP_STORE_CONNECT_ISSUER_ID"
+  --api-key "$APP_STORE_CONNECT_API_KEY_ID" --api-issuer "$APP_STORE_CONNECT_ISSUER_ID"
 echo 'Upload command completed. Apple processing and tester availability must be checked in App Store Connect.'
