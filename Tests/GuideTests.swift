@@ -20,6 +20,36 @@ final class GuideTests: XCTestCase {
         XCTAssertNil(Sighting.coordinate(""))
     }
 
+    @MainActor func testBackupMergeAndRejectInvalidCoordinates() throws {
+        let suite = "ARKGuideBackupTests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let store = GuideStore(defaults: defaults)
+        let creature = try XCTUnwrap(store.creatures.first)
+        store.add(Sighting(creatureID: creature.id, server: "خادم تجريبي", map: "الجزيرة", latitude: 40, longitude: 60, created: Date()))
+        XCTAssertEqual(try store.importBackup(store.backupData()), 0)
+        let invalid = GuideBackup(version: 1, favorites: [], sightings: [Sighting(creatureID: creature.id, server: "خادم", map: "الجزيرة", latitude: 101, longitude: 60, created: Date())])
+        XCTAssertThrowsError(try store.importBackup(JSONEncoder().encode(invalid)))
+        XCTAssertEqual(store.sightings.count, 1)
+        let other = GuideBackup(version: 1, favorites: [creature.id], sightings: [Sighting(creatureID: creature.id, server: "خادم آخر", map: "الجزيرة", latitude: 20, longitude: 30, created: Date())])
+        XCTAssertEqual(try store.importBackup(JSONEncoder().encode(other)), 1)
+        XCTAssertEqual(store.sightings.count, 2)
+        XCTAssertTrue(store.favorites.contains(creature.id))
+    }
+
+    @MainActor func testCorruptSavedDataIsNotOverwritten() throws {
+        let suite = "ARKGuideCorruptTests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let invalid = Data("invalid-json".utf8)
+        defaults.set(invalid, forKey: "ark.guide.userdata.v1")
+        let store = GuideStore(defaults: defaults)
+        XCTAssertNotNil(store.error)
+        store.favorite(try XCTUnwrap(store.creatures.first))
+        XCTAssertEqual(defaults.data(forKey: "ark.guide.userdata.v1"), invalid)
+        XCTAssertThrowsError(try store.backupData())
+    }
+
     @MainActor func testPersistedSightings() throws {
         let suite = "ARKGuideTests.\(UUID().uuidString)"
         let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
