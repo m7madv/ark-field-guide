@@ -48,6 +48,11 @@ jobs:
           brew install xcodegen
           xcodegen generate
           echo "ARK_BUILD_NUMBER=$((GITHUB_RUN_NUMBER * 100 + GITHUB_RUN_ATTEMPT))" >> "$GITHUB_ENV"
+      - name: Check Arabic model behavior
+        run: |
+          mkdir -p build
+          swiftc -swift-version 5 -parse-as-library Sources/Models.swift scripts/VerifyModels.swift -o build/verify-models
+          build/verify-models
       - name: Build unsigned device application
         run: |
           set -o pipefail

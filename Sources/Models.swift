@@ -15,7 +15,11 @@ struct Creature: Codable, Identifiable, Hashable {
     }
 
     static func normalize(_ text: String) -> String {
-        text.lowercased()
+        let decomposed = text.decomposedStringWithCanonicalMapping
+        let unmarked = String(String.UnicodeScalarView(decomposed.unicodeScalars.filter {
+            !CharacterSet.nonBaseCharacters.contains($0)
+        }))
+        return unmarked.lowercased()
             .folding(options: [.diacriticInsensitive, .widthInsensitive], locale: Locale(identifier: "ar"))
             .replacingOccurrences(of: "أ", with: "ا")
             .replacingOccurrences(of: "إ", with: "ا")
