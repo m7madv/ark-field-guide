@@ -51,7 +51,7 @@ jobs:
       - name: Check Arabic model behavior
         run: |
           mkdir -p build
-          swiftc -swift-version 5 -parse-as-library Sources/Models.swift scripts/VerifyModels.swift -o build/verify-models
+          swiftc -target "$(uname -m)-apple-macosx14.0" -swift-version 5 -parse-as-library Sources/Models.swift scripts/VerifyModels.swift -o build/verify-models
           build/verify-models
       - name: Build unsigned device application
         run: |
