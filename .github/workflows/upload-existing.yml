@@ -1,0 +1,38 @@
+name: Upload existing signed build
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        description: Run ID containing the tested and signed ARKFieldGuide-build artifact
+        required: true
+        default: '41206768078'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  upload:
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: ARKFieldGuide-build
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+          path: build
+      - name: Upload tested signed IPA
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY_BASE64 }}
+        run: bash scripts/upload_testflight.sh
+      - name: Clean up API key
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/ark-api-key-path" ]; then
+            KEY_PATH=$(cat "$RUNNER_TEMP/ark-api-key-path")
+            case "$KEY_PATH" in "$HOME/.appstoreconnect/private_keys/AuthKey_"*.p8) rm -f "$KEY_PATH" ;; esac
+          fi
